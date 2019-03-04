@@ -1,9 +1,20 @@
-# Flutter_App
+## Flutter_App
 
 A new Flutter App.
 
+## 本地开发(基于 vsCode + 手机（需使用数据线连接） / 虚拟移动终端设备 )
 
-# 目录结构
+    (小虫子) Ctrl + Shift + D 或者 F5 开启调试模式
+    
+## 打包
+
+    Android
+        flutter run apk
+        
+    IPhone（此处打包只能在 Mac 上）
+        flutter run ios
+    
+## 目录结构
 
     │  .gitignore
     │  .metadata
