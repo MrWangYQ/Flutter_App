@@ -11,7 +11,7 @@ class _IdeaPageState extends State<MyPage> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('我的'),
+          title: new Text('我的首页'),
           actions: <Widget>[
             new Container()
           ],
