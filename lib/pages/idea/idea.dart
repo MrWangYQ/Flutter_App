@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-class MarketPage extends StatefulWidget{
+// import 'package:location/location.dart';
+
+class IdeaPage extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() => new _MarketPageState();
+  State<StatefulWidget> createState() => new _IdeaPageState();
 }
-class _MarketPageState extends State<MarketPage> {
+class _IdeaPageState extends State<IdeaPage> {
   final TextStyle _biggerFont = new TextStyle(fontSize: 18.0);
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('市场'),
+          title: new Text('想法'),
           actions: <Widget>[
             new Container()
           ],
         ),
         body: new Center(
-          child: new Text('Market', style: _biggerFont),
+          child: new Text('Good Idea', style: _biggerFont),
         ),
       ),
     );
   }
-
 }

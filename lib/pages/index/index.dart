@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:Miracle/NoticePage/NoticePage.dart';
-import 'package:Miracle/home/home.dart';
-import 'package:Miracle/idea/idea.dart';
-import 'package:Miracle/market/market.dart';
-import 'package:Miracle/my/my.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:Miracle/pages/NoticePage/NoticePage.dart';
+import 'package:Miracle/pages/home/home.dart';
+import 'package:Miracle/pages/idea/idea.dart';
+import 'package:Miracle/pages/market/market.dart';
+import 'package:Miracle/pages/my/my.dart';
 
-import 'package:Miracle/NavigationIconView/navigation_icon_view.dart'; // 如果是在同一个包的路径下，可以直接使用对应的文件名
+import 'package:Miracle/pages/NavigationIconView/navigation_icon_view.dart'; // 如果是在同一个包的路径下，可以直接使用对应的文件名
 
 // 创建一个 带有状态的 Widget Index
 class Index extends StatefulWidget {
@@ -36,7 +37,7 @@ class _IndexState extends State<Index> with TickerProviderStateMixin{
     _navigationViews = <NavigationIconView>[
       new NavigationIconView(icon: new Icon(Icons.assessment), title: new Text("首页"), vsync: this), // vsync 默认属性和参数
       new NavigationIconView(icon: new Icon(Icons.all_inclusive), title: new Text("想法"), vsync: this),
-      new NavigationIconView(icon: new Icon(Icons.add_shopping_cart), title: new Text("市场"), vsync: this),
+      new NavigationIconView(icon: new Icon(Icons.add_shopping_cart), title: new Text("商场"), vsync: this),
       new NavigationIconView(icon: new Icon(Icons.add_alert), title: new Text("通知"), vsync: this),
       new NavigationIconView(icon: new Icon(Icons.perm_identity), title: new Text("我的"), vsync: this),
     ];
@@ -64,7 +65,7 @@ class _IndexState extends State<Index> with TickerProviderStateMixin{
     final BottomNavigationBar bottomNavigationBar = new BottomNavigationBar(
       items: _navigationViews
           .map((NavigationIconView navigationIconView) => navigationIconView.item)
-          .toList(),  // 添加 icon 按钮
+          .toList(),  // 添加 icon 按钮  取到所有的导航list
       currentIndex: _currentIndex,  // 当前点击的索引值
       type: BottomNavigationBarType.fixed,    // 设置底部导航工具栏的类型：fixed 固定
       onTap: (int index){   // 添加点击事件
@@ -79,16 +80,15 @@ class _IndexState extends State<Index> with TickerProviderStateMixin{
 
     return new MaterialApp(
         home: new Scaffold(
+          backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
           body: new Center(
               child: _currentPage   // 动态的展示我们当前的页面
           ),
           bottomNavigationBar: bottomNavigationBar,   // 底部工具栏
         ),
-
       theme: new ThemeData(
         primarySwatch: Colors.blue,   // 设置主题颜色
       ),
-
     );
   }
 
